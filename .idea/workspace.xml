@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="76e29719-c876-4521-845f-abe71d40aed8" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../PythonProject5/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../PythonProject5/bot_config.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../PythonProject5/database/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../PythonProject5/database/table.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../PythonProject5/handlers/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../PythonProject5/handlers/echo.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../PythonProject5/handlers/info.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../PythonProject5/handlers/random.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../PythonProject5/handlers/review_dialog.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../PythonProject5/handlers/start.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../PythonProject5/items/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../PythonProject5/items/kb.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../PythonProject5/main.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_project/main/basket/forms.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_project/main/basket/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_project/main/book_tags/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_project/main/library_blog/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_project/main/templates/basket/basket_detail.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_project/main/templates/basket/create_basket.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_project/main/templates/basket/delete_basket.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_project/main/templates/basket/update_basket.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_project/main/templates/book.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_project/main/templates/book_detail.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_project/main/templates/components/footer.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_project/main/templates/components/header.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_project/main/templates/tags/all_book.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_project/main/templates/tags/kids.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_project/main/templates/tags/pensioners.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_project/main/templates/tags/teenagers.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_project/main/templates/tags/youths.html" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 8
+}]]></component>
+  <component name="ProjectId" id="2segf7xSQMS4i59qpEFhO2uIjHg" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "master"
+  }
+}]]></component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-python-sdk-975db3bf15a3-31b6be0877a2-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-241.18034.82" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="76e29719-c876-4521-845f-abe71d40aed8" name="Changes" comment="" />
+      <created>1738821554289</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1738821554289</updated>
+    </task>
+    <servers />
+  </component>
+</project>
