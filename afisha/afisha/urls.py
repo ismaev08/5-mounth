@@ -24,5 +24,4 @@ urlpatterns = [
     path('api/v1/movie/', views.movie_api_list_view),
     path('api/v1/director/', views.director_api_list_view),
     path('api/v1/review/', views.review_api_list_view),
-    path('', include('movies.urls')),
 ]
