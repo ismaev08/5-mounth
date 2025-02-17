@@ -20,7 +20,7 @@ class DirectorSerializers(serializers.ModelSerializer):
 class ReviewSerializers(serializers.ModelSerializer):
     class Meta:
         model = Review
-        fields = ['text', 'movie', 'STARS']
+        fields = ['stars', 'text', 'movie',]
 
 
 

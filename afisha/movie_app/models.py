@@ -11,32 +11,14 @@ class AbstractNameModel(models.Model):
         return self.name
 
 
-class Category(models.Model):
-    name = models.CharField(max_length=255)
-    parent = models.ForeignKey('self', on_delete=models.CASCADE, null=True, blank=True)
-
-    def __str__(self):
-        return self.name
-
-
-class HasTag(AbstractNameModel):
-    pass
-
-
 class Director(models.Model):
     name = models.CharField(max_length=50)
-    hash_tags = models.ManyToManyField(HasTag, blank=True)
-    category = models.ForeignKey(Category, on_delete=models.CASCADE, null=True, blank=True)
 
     def __str__(self):
         return self.name
-
-
-
 
 
 class Movie(models.Model):
-    stars = models.IntegerField(default=5)
     title = models.CharField(max_length=50)
     description = models.TextField()
     duration = models.IntegerField(default=1)
@@ -46,9 +28,20 @@ class Movie(models.Model):
         return self.title
 
 
-class Review (models.Model):
+STARS = (
+    (1, '*'),
+    (2, '**'),
+    (3, '***'),
+    (4, '****'),
+    (5, '*****')
+)
+
+
+class Review(models.Model):
     text = models.TextField()
-    movie = models.ForeignKey(Movie, on_delete=models.CASCADE)
+    stars = models.IntegerField(choices=STARS, default=5)
+    movie = models.ForeignKey('Movie', on_delete=models.CASCADE, related_name='reviews',)
 
     def __str__(self):
         return self.text
+
