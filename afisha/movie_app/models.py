@@ -18,22 +18,12 @@ class Director(models.Model):
         return self.name
 
 
-class Movie(models.Model):
-    title = models.CharField(max_length=50)
-    description = models.TextField()
-    duration = models.IntegerField(default=1)
-    director = models.ForeignKey(Director, on_delete=models.CASCADE)
-
-    def __str__(self):
-        return self.title
-
-
 STARS = (
     (1, '*'),
-    (2, '**'),
-    (3, '***'),
-    (4, '****'),
-    (5, '*****')
+    (2, '* *'),
+    (3, '* * *'),
+    (4, '* * * *'),
+    (5, '* * * * *')
 )
 
 
@@ -44,4 +34,14 @@ class Review(models.Model):
 
     def __str__(self):
         return self.text
+
+
+class Movie(models.Model):
+    title = models.CharField(max_length=50)
+    description = models.TextField()
+    duration = models.IntegerField(default=1)
+    director = models.ForeignKey(Director, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.title
 
