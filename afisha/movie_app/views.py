@@ -1,50 +1,33 @@
-from rest_framework import status
-from rest_framework.decorators import api_view
-from rest_framework.response import Response
-from .models import Movie, Director, Review
-from .serializers import MovieSerializers, DirectorSerializers, ReviewSerializers
+from rest_framework import generics
+from .models import Director, Movie, Review
+from .serializers import DirectorSerializer, MovieSerializer, ReviewSerializer
 
 
-@api_view(http_method_names=['GET', 'POST'])
-def movie_api_list_view(request):
-    if request.method == 'GET':
-        movie = Movie.objects.all()
-        data = MovieSerializers(instance=movie, many=True).data
-        return Response(data=data)
-
-    elif request.method == 'POST':
-        # print(request.data)
-        title = request.data.get('title')
-        description = request.data.get('description')
-        duration = request.data.get('duration')
-        director_id = request.data.get('director_id')
-        movie = Movie.objects.create(
-            title=title,
-            description=description,
-            duration=duration,
-            director_id=director_id
-        )
-        return Response(data={'movie_id': movie.id}, status=status.HTTP_201_CREATED)
+class DirectorListView(generics.ListCreateAPIView):
+    queryset = Director.objects.all()
+    serializer_class = DirectorSerializer
 
 
-@api_view(http_method_names=['GET', 'POST'])
-def director_api_list_view(request):
-    if request.method == 'GET':
-        director = Director.objects.all()
-        data = DirectorSerializers(instance=director, many=True).data
-        return Response(data=data)
-
-    elif request.method == 'POST':
-        name = request.data.get('name')
-        director = Director.objects.create(
-            name=name
-        )
-        return Response(data={'director': director}, status=status.HTTP_201_CREATED)
+class DirectorDetailView(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Director.objects.all()
+    serializer_class = DirectorSerializer
 
 
-@api_view(http_method_names=['GET'])
-def review_api_list_view(request):
-    review = Review.objects.all()
-    data = ReviewSerializers(instance=review, many=True).data
-    return Response(data=data)
+class MovieListView(generics.ListCreateAPIView):
+    queryset = Movie.objects.all()
+    serializer_class = MovieSerializer
 
+
+class MovieDetailView(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Movie.objects.all()
+    serializer_class = MovieSerializer
+
+
+class ReviewListView(generics.ListCreateAPIView):
+    queryset = Review.objects.all()
+    serializer_class = ReviewSerializer
+
+
+class ReviewDetailView(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Review.objects.all()
+    serializer_class = ReviewSerializer
