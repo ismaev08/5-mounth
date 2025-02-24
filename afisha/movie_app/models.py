@@ -18,6 +18,7 @@ class Movie(models.Model):
     duration = models.IntegerField()
     director = models.ForeignKey(Director, on_delete=models.CASCADE)
 
+
     def __str__(self):
         return self.title
 
