@@ -30,3 +30,4 @@ class Review(models.Model):
 
     def __str__(self):
         return f"{self.movie.title} - {self.stars}⭐"
+
