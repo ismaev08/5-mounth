@@ -1,21 +1,18 @@
 from rest_framework import serializers
-from django.contrib.auth import get_user_model
+from django.contrib.auth.models import User
+from rest_framework.exceptions import ValidationError
 
-User = get_user_model()
 
-class UserSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = User
-        fields = ['id', 'username', 'email', 'password']
-        extra_kwargs = {'password': {'write_only': True}}
+class UserRegisterSerializer(serializers.Serializer):
+    username = serializers.CharField(max_length=120)
+    password = serializers.CharField(min_length=8)
 
-    def create(self, validated_data):
-        """Создаёт пользователя, делает его неактивным и генерирует confirmation_code."""
-        user = User.objects.create_user(**validated_data)
-        user.is_active = False
-        user.generate_confirmation_code()
-        return user
+    def validate_username(self, username):
+        try:
+            User.objects.get(username=username)
+        except:
+            return username
+        raise ValidationError("Username already exists")
 
-class ConfirmUserSerializer(serializers.Serializer):
-    username = serializers.CharField()
-    confirmation_code = serializers.CharField(max_length=6)
+class UserAuthSerializer(UserRegisterSerializer):
+    pass
