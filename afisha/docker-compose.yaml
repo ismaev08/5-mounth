@@ -1,0 +1,30 @@
+version: '3.8'
+
+services:
+  web:
+    build: .
+    container_name: flask_app
+    ports:
+      - "5000:5000"   # Открывает порт 5000 на хосте и пробрасывает его в контейнер
+    environment:
+      - FLASK_APP=app.py
+      - FLASK_ENV=development
+    volumes:
+      - .:/app  # Монтирует директорию проекта в контейнер, чтобы изменения в коде на хосте отражались в контейнере
+    depends_on:
+      - db      # Зависимость от базы данных (если она есть)
+
+  db:
+    image: postgres:13   # Используем официальный образ PostgreSQL
+    container_name: postgres_db
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: mydb
+    volumes:
+      - postgres_data:/var/lib/postgresql/data  # Монтируем volume для хранения данных
+    ports:
+      - "5432:5432"  # Открываем порт для базы данных
+
+volumes:
+  postgres_data:  # Название volume, используемое для хранения данных базы данных
